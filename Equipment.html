@@ -1,216 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جدول المعدات</title>
+    <title>جدول الأفعال الهولندية - VTT</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
         }
         .container {
-            width: 80%;
-            margin: auto;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
         }
-        h1 {
+        h2 {
             text-align: center;
+            background-color: #16a085;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px 15px;
+            font-size: 22px;
+        }
+        .note {
+            background-color: #e8f8f5;
+            color: #16a085;
+            padding: 12px 15px;
+            font-size: 13px;
+            border-bottom: 1px solid #a3e4d7;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            text-align: right;
         }
         th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: left;
+            padding: 14px 15px;
+            border-bottom: 1px solid #e0e0e0;
         }
         th {
-            background-color: #d9d9d9;
+            background-color: #1abc9c;
+            color: #ffffff;
+            font-size: 15px;
+            white-space: nowrap;
         }
-        .button-container {
-            text-align: center;
-            margin: 20px 0;
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
-        button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            font-size: 16px;
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .dutch {
+            direction: ltr;
+            text-align: left;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .infinitive {
+            color: #d35400;
+        }
+
+        /* Responsive Breakpoint for Mobile Devices */
+        @media screen and (max-width: 650px) {
+            body {
+                padding: 8px;
+            }
+            .container {
+                border-radius: 8px;
+            }
+            h2 {
+                font-size: 18px;
+                padding: 15px 10px;
+            }
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #dcdde1;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                background-color: #fff !important;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #f0f0f0;
+                position: relative;
+                padding: 10px 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+                font-size: 14px;
+            }
+            td:last-child {
+                border-bottom: none;
+                text-align: right;
+            }
+            /* Add field labels dynamically */
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                color: #7f8c8d;
+                font-size: 12px;
+                margin-left: 10px;
+                white-space: nowrap;
+            }
+            .dutch {
+                text-align: right;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>جدول المعدات</h1>
 
-        <div class="button-container">
-            <button onclick="window.print()">Print</button>
-            <button onclick="copyContent()">Copy Content</button>
-        </div>
-
+<div class="container">
+    <h2>الأفعال الهولندية: زمن الماضي التام A1 (VTT)</h2>
+    <div class="note">
+        ملاحظة: زمن VTT يتكون من الفعل المساعد (hebben أو zijn) + اسم المفعول (Het voltooid deelwoord).
+    </div>
+    <div class="table-responsive">
         <table>
             <thead>
                 <tr>
-                    <th>Equipment (English)</th>
-                    <th>Equipment (Arabic)</th>
-                    <th>Quantity</th>
+                    <th>المصدر (Infinitief)</th>
+                    <th>المفرد (ik)</th>
+                    <th>الجمع (we)</th>
+                    <th>المعنى بالعربية</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Dump truck</td>
-                    <td>قلاب</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Bus</td>
-                    <td>باص</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>Trailer</td>
-                    <td>تريلا</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Bulldozer</td>
-                    <td>بلدوزر</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Bobcat</td>
-                    <td>بوبكات</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>Poklain</td>
-                    <td>حفار</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Shovel</td>
-                    <td>شول</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>Roller (hand roller)</td>
-                    <td>رصاصة صغيرة</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Roller</td>
-                    <td>رصاصة كبيرة</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Boom truck</td>
-                    <td>بوم تراك</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Diesel Tanker</td>
-                    <td>تناك ديزل</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Water tanker</td>
-                    <td>تناك ماء</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Generator</td>
-                    <td>مولد</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>D-Max</td>
-                    <td>دي ماكس</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Hilux 4x4</td>
-                    <td>هايلكس</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Car</td>
-                    <td>لاند كروزر</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Car</td>
-                    <td>فورتشنر</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Dyna</td>
-                    <td>دينا</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Ambulance</td>
-                    <td>اسعاف</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Trailer</td>
-                    <td>ترايل</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Grader</td>
-                    <td>قريد</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>JCB Backloader</td>
-                    <td>جي سي بي</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Car</td>
-                    <td>تكس</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Tower light</td>
-                    <td>كشاف انارة</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Crane</td>
-                    <td>كرين</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Compressor</td>
-                    <td>كمبرسور</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Forklift</td>
-                    <td>رافعة شوكية</td>
-                    <td>1</td>
-                </tr>
-                <tr class="header">
-                    <td colspan="2">الإجمال</td>
-                    <td>45</td>
-                </tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">zijn</td><td class="dutch" data-label="المفرد (ik)">ik ben geweest</td><td class="dutch" data-label="الجمع (we)">we zijn geweest</td><td data-label="المعنى">كان / يكون</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">hebben</td><td class="dutch" data-label="المفرد (ik)">ik heb gehad</td><td class="dutch" data-label="الجمع (we)">we hebben gehad</td><td data-label="المعنى">امتلك / كان لديه</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">gaan</td><td class="dutch" data-label="المفرد (ik)">ik ben gegaan</td><td class="dutch" data-label="الجمع (we)">we zijn gegaan</td><td data-label="المعنى">ذهب</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">komen</td><td class="dutch" data-label="المفرد (ik)">ik ben gekomen</td><td class="dutch" data-label="الجمع (we)">we zijn gekomen</td><td data-label="المعنى">أتى</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">wonen</td><td class="dutch" data-label="المفرد (ik)">ik heb gewoond</td><td class="dutch" data-label="الجمع (we)">we hebben gewoond</td><td data-label="المعنى">سكن</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">werken</td><td class="dutch" data-label="المفرد (ik)">ik heb gewerkt</td><td class="dutch" data-label="الجمع (we)">we hebben gewerkt</td><td data-label="المعنى">عمل</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">leren</td><td class="dutch" data-label="المفرد (ik)">ik heb geleerd</td><td class="dutch" data-label="الجمع (we)">we hebben geleerd</td><td data-label="المعنى">تعلّم</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">studeren</td><td class="dutch" data-label="المفرد (ik)">ik heb gestudeerd</td><td class="dutch" data-label="الجمع (we)">we hebben gestudeerd</td><td data-label="المعنى">درس</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">lezen</td><td class="dutch" data-label="المفرد (ik)">ik heb gelezen</td><td class="dutch" data-label="الجمع (we)">we hebben gelezen</td><td data-label="المعنى">قرأ</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">schrijven</td><td class="dutch" data-label="المفرد (ik)">ik heb geschreven</td><td class="dutch" data-label="الجمع (we)">we hebben geschreven</td><td data-label="المعنى">كتب</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">spreken</td><td class="dutch" data-label="المفرد (ik)">ik heb gesproken</td><td class="dutch" data-label="الجمع (we)">we hebben gesproken</td><td data-label="المعنى">تحدث</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">zeggen</td><td class="dutch" data-label="المفرد (ik)">ik heb gezegd</td><td class="dutch" data-label="الجمع (we)">we hebben gezegd</td><td data-label="المعنى">قال</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">luisteren</td><td class="dutch" data-label="المفرد (ik)">ik heb geluisterd</td><td class="dutch" data-label="الجمع (we)">we hebben geluisterd</td><td data-label="المعنى">استمع</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">horen</td><td class="dutch" data-label="المفرد (ik)">ik heb gehoord</td><td class="dutch" data-label="الجمع (we)">we hebben gehoord</td><td data-label="المعنى">سمع</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">kijken</td><td class="dutch" data-label="المفرد (ik)">ik heb gekeken</td><td class="dutch" data-label="الجمع (we)">we hebben gekeken</td><td data-label="المعنى">نظر / شاهد</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">zien</td><td class="dutch" data-label="المفرد (ik)">ik heb gezien</td><td class="dutch" data-label="الجمع (we)">we hebben gezien</td><td data-label="المعنى">رأى</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">eten</td><td class="dutch" data-label="المفرد (ik)">ik heb gegeten</td><td class="dutch" data-label="الجمع (we)">we hebben gegeten</td><td data-label="المعنى">أكل</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">drinken</td><td class="dutch" data-label="المفرد (ik)">ik heb gedronken</td><td class="dutch" data-label="الجمع (we)">we hebben gedronken</td><td data-label="المعنى">شرب</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">koken</td><td class="dutch" data-label="المفرد (ik)">ik heb gekookt</td><td class="dutch" data-label="الجمع (we)">we hebben gekookt</td><td data-label="المعنى">طبخ</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">slapen</td><td class="dutch" data-label="المفرد (ik)">ik heb geslapen</td><td class="dutch" data-label="الجمع (we)">we hebben geslapen</td><td data-label="المعنى">نام</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">wakker worden</td><td class="dutch" data-label="المفرد (ik)">ik ben wakker geworden</td><td class="dutch" data-label="الجمع (we)">we zijn wakker geworden</td><td data-label="المعنى">استيقظ</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">douchen</td><td class="dutch" data-label="المفرد (ik)">ik heb gedoucht</td><td class="dutch" data-label="الجمع (we)">we hebben gedoucht</td><td data-label="المعنى">استحم</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">wassen</td><td class="dutch" data-label="المفرد (ik)">ik heb gewassen</td><td class="dutch" data-label="الجمع (we)">we hebben gewassen</td><td data-label="المعنى">غسل</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">aankleden</td><td class="dutch" data-label="المفرد (ik)">ik heb me aangekleed</td><td class="dutch" data-label="الجمع (we)">we hebben ons aangekleed</td><td data-label="المعنى">ارتدى ملابسه</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">openen</td><td class="dutch" data-label="المفرد (ik)">ik heb geopend</td><td class="dutch" data-label="الجمع (we)">we hebben geopend</td><td data-label="المعنى">فتح</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">sluiten</td><td class="dutch" data-label="المفرد (ik)">ik heb gesloten</td><td class="dutch" data-label="الجمع (we)">we hebben gesloten</td><td data-label="المعنى">أغلق</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">kopen</td><td class="dutch" data-label="المفرد (ik)">ik heb gekocht</td><td class="dutch" data-label="الجمع (we)">we hebben gekocht</td><td data-label="المعنى">اشترى</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">verkopen</td><td class="dutch" data-label="المفرد (ik)">ik heb verkocht</td><td class="dutch" data-label="الجمع (we)">we hebben verkocht</td><td data-label="المعنى">باع</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">betalen</td><td class="dutch" data-label="المفرد (ik)">ik heb betaald</td><td class="dutch" data-label="الجمع (we)">we hebben betaald</td><td data-label="المعنى">دفع</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">geven</td><td class="dutch" data-label="المفرد (ik)">ik heb gegeven</td><td class="dutch" data-label="الجمع (we)">we hebben gegeven</td><td data-label="المعنى">أعطى</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">krijgen</td><td class="dutch" data-label="المفرد (ik)">ik heb gekregen</td><td class="dutch" data-label="الجمع (we)">we hebben gekregen</td><td data-label="المعنى">حصل على</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">nemen</td><td class="dutch" data-label="المفرد (ik)">ik heb genomen</td><td class="dutch" data-label="الجمع (we)">we hebben genomen</td><td data-label="المعنى">أخذ</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">brengen</td><td class="dutch" data-label="المفرد (ik)">ik heb gebracht</td><td class="dutch" data-label="الجمع (we)">we hebben gebracht</td><td data-label="المعنى">أحضر / جلب</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">maken</td><td class="dutch" data-label="المفرد (ik)">ik heb gemaakt</td><td class="dutch" data-label="الجمع (we)">we hebben gemaakt</td><td data-label="المعنى">صنع / عمل</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">doen</td><td class="dutch" data-label="المفرد (ik)">ik heb gedaan</td><td class="dutch" data-label="الجمع (we)">we hebben gedaan</td><td data-label="المعنى">فعل</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">helpen</td><td class="dutch" data-label="المفرد (ik)">ik heb geholpen</td><td class="dutch" data-label="الجمع (we)">we hebben geholpen</td><td data-label="المعنى">ساعد</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">wachten</td><td class="dutch" data-label="المفرد (ik)">ik heb gewacht</td><td class="dutch" data-label="الجمع (we)">we hebben gewacht</td><td data-label="المعنى">انتظر</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">beginnen</td><td class="dutch" data-label="المفرد (ik)">ik ben begonnen</td><td class="dutch" data-label="الجمع (we)">we zijn begonnen</td><td data-label="المعنى">بدأ</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">eindigen</td><td class="dutch" data-label="المفرد (ik)">ik ben geëindigd</td><td class="dutch" data-label="الجمع (we)">we zijn geëindigd</td><td data-label="المعنى">انتهى</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">blijven</td><td class="dutch" data-label="المفرد (ik)">ik ben gebleven</td><td class="dutch" data-label="الجمع (we)">we zijn gebleven</td><td data-label="المعنى">بقي</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">vinden</td><td class="dutch" data-label="المفرد (ik)">ik heb gevonden</td><td class="dutch" data-label="الجمع (we)">we hebben gevonden</td><td data-label="المعنى">وجد</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">zoeken</td><td class="dutch" data-label="المفرد (ik)">ik heb gezocht</td><td class="dutch" data-label="الجمع (we)">we hebben gezocht</td><td data-label="المعنى">بحث</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">vragen</td><td class="dutch" data-label="المفرد (ik)">ik heb gevraagd</td><td class="dutch" data-label="الجمع (we)">we hebben gevraagd</td><td data-label="المعنى">سأل</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">antwoorden</td><td class="dutch" data-label="المفرد (ik)">ik heb geantwoord</td><td class="dutch" data-label="الجمع (we)">we hebben geantwoord</td><td data-label="المعنى">أجاب</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">kennen</td><td class="dutch" data-label="المفرد (ik)">ik heb gekend</td><td class="dutch" data-label="الجمع (we)">we hebben gekend</td><td data-label="المعنى">عرف (شخصًا أو مكانًا)</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">weten</td><td class="dutch" data-label="المفرد (ik)">ik heb geweten</td><td class="dutch" data-label="الجمع (we)">we hebben geweten</td><td data-label="المعنى">عرف (معلومة)</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">begrijpen</td><td class="dutch" data-label="المفرد (ik)">ik heb begrepen</td><td class="dutch" data-label="الجمع (we)">we hebben begrepen</td><td data-label="المعنى">فهم</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">vergeten</td><td class="dutch" data-label="المفرد (ik)">ik ben vergeten</td><td class="dutch" data-label="الجمع (we)">we zijn vergeten</td><td data-label="المعنى">نسي</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">onthouden</td><td class="dutch" data-label="المفرد (ik)">ik heb onthouden</td><td class="dutch" data-label="الجمع (we)">we hebben onthouden</td><td data-label="المعنى">تذكّر</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">reizen</td><td class="dutch" data-label="المفرد (ik)">ik heb gereisd</td><td class="dutch" data-label="الجمع (we)">we hebben gereisd</td><td data-label="المعنى">سافر</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">rijden</td><td class="dutch" data-label="المفرد (ik)">ik heb gereden</td><td class="dutch" data-label="الجمع (we)">we hebben gereden</td><td data-label="المعنى">قاد</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">fietsen</td><td class="dutch" data-label="المفرد (ik)">ik heb gefietst</td><td class="dutch" data-label="الجمع (we)">we hebben gefietst</td><td data-label="المعنى">ركب الدراجة</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">lopen</td><td class="dutch" data-label="المفرد (ik)">ik heb gelopen</td><td class="dutch" data-label="الجمع (we)">we hebben gelopen</td><td data-label="المعنى">مشى</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">rennen</td><td class="dutch" data-label="المفرد (ik)">ik heb gerend</td><td class="dutch" data-label="الجمع (we)">we hebben gerend</td><td data-label="المعنى">جرى</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">zitten</td><td class="dutch" data-label="المفرد (ik)">ik heb gezeten</td><td class="dutch" data-label="الجمع (we)">we hebben gezeten</td><td data-label="المعنى">جلس</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">staan</td><td class="dutch" data-label="المفرد (ik)">ik heb gestaan</td><td class="dutch" data-label="الجمع (we)">we hebben gestaan</td><td data-label="المعنى">وقف</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">liggen</td><td class="dutch" data-label="المفرد (ik)">ik heb gelegen</td><td class="dutch" data-label="الجمع (we)">we hebben gelegen</td><td data-label="المعنى">استلقى / كان موضوعًا</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">spelen</td><td class="dutch" data-label="المفرد (ik)">ik heb gespeeld</td><td class="dutch" data-label="الجمع (we)">we hebben gespeeld</td><td data-label="المعنى">لعب</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">zwemmen</td><td class="dutch" data-label="المفرد (ik)">ik heb gezwommen</td><td class="dutch" data-label="الجمع (we)">we hebben gezwommen</td><td data-label="المعنى">سبح</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">zingen</td><td class="dutch" data-label="المفرد (ik)">ik heb gezongen</td><td class="dutch" data-label="الجمع (we)">we hebben gezongen</td><td data-label="المعنى">غنّى</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">dansen</td><td class="dutch" data-label="المفرد (ik)">ik heb gedanst</td><td class="dutch" data-label="الجمع (we)">we hebben gedanst</td><td data-label="المعنى">رقص</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">bellen</td><td class="dutch" data-label="المفرد (ik)">ik heb gebeld</td><td class="dutch" data-label="الجمع (we)">we hebben gebeld</td><td data-label="المعنى">اتصل هاتفيًا</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">sturen</td><td class="dutch" data-label="المفرد (ik)">ik heb gestuurd</td><td class="dutch" data-label="الجمع (we)">we hebben gestuurd</td><td data-label="المعنى">أرسل</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">ontmoeten</td><td class="dutch" data-label="المفرد (ik)">ik heb ontmoet</td><td class="dutch" data-label="الجمع (we)">we hebben ontmoet</td><td data-label="المعنى">قابل</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">houden van</td><td class="dutch" data-label="المفرد (ik)">ik heb gehouden van</td><td class="dutch" data-label="الجمع (we)">we hebben gehouden van</td><td data-label="المعنى">أحب</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">proberen</td><td class="dutch" data-label="المفرد (ik)">ik heb geprobeerd</td><td class="dutch" data-label="الجمع (we)">we hebben geprobeerd</td><td data-label="المعنى">حاول</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">kiezen</td><td class="dutch" data-label="المفرد (ik)">ik heb gekozen</td><td class="dutch" data-label="الجمع (we)">we hebben gekozen</td><td data-label="المعنى">اختار</td></tr>
+                <tr><td class="dutch infinitive" data-label="المصدر">gebruiken</td><td class="dutch" data-label="المفرد (ik)">ik heb gebruikt</td><td class="dutch" data-label="الجمع (we)">we hebben gebruikt</td><td data-label="المعنى">استخدم</td></tr>
             </tbody>
         </table>
     </div>
+</div>
 
-    <script>
-        function copyContent() {
-            const el = document.createElement('textarea');
-            el.value = document.querySelector('.container').innerText;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert('Content copied to clipboard');
-        }
-    </script>
 </body>
 </html>
